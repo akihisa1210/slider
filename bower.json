@@ -1,0 +1,22 @@
+{
+    "name": "slider",
+    "version": "1.0.0",
+    "authors": [
+      "akihisa1210"
+    ],
+    "main": "slider.js",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+      "jquery": "~3.3.1",
+      "marked": "~0.5.1",
+      "highlightjs": "~9.12.0",
+      "bootstrap": "~4.1.3"
+    }
+  }
