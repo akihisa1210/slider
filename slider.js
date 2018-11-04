@@ -33,10 +33,6 @@ $(function() {
         var html = `<div class="slide">${marked(src, {renderer: renderer})}</div>`;
 
         $('#result').html(html);
-
-        $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        });
     });
 });
 
