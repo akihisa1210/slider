@@ -1,7 +1,14 @@
 textarea {
-    resize: vertical;
-    min-height: 500px;
-    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-    line-height: 20px;
-  }
-  
+  resize: vertical;
+  min-height: 500px;
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  line-height: 20px;
+}
+
+.slide {
+  margin: 2em auto;
+  padding: 1em;
+  width: 90%;
+  background-color: #fff; /* 背景色 */
+  border: 1px solid #ccc; /* 枠線 */
+}
