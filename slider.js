@@ -19,6 +19,8 @@ $(function() {
         renderer.heading = function(text, level) {
             if (level === 1) {
                 return `</div><div class="slide"><h${level}>${text}</h${level}>`;
+            } else {
+                return `<h${level}>${text}</h${level}>`;
             }
         };
 
