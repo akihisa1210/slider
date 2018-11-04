@@ -58,11 +58,11 @@ body {
   
   h1 {
     font-size: 28px;
+    border-bottom: 1px solid #cccccc;
     color: black; }
   
   h2 {
     font-size: 24px;
-    border-bottom: 1px solid #cccccc;
     color: black; }
   
   h3 {
