@@ -8,7 +8,8 @@
  */
 $(function() {
     marked.setOptions({
-        langPrefix: ''
+        langPrefix: '',
+        sanitize: false,
     });
 
     $('#editor').keyup(function() {
