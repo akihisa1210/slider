@@ -14,7 +14,15 @@ $(function() {
     $('#editor').keyup(function() {
         var src = $(this).val();
 
-        var html = marked(src);
+        // marked のレンダラを変更し、<h1> の前に </div><div class="slide"> が入力されるようにする。
+        // html の最初と最後に、<div class=slide> と </div> をそれぞれ挿入する。
+        var renderer = new marked.Renderer();
+        renderer.heading = function(text, level) {
+            if (level === 1) {
+                return `</div><div class="slide"><h${level}>${text}</h${level}>`;
+            }
+        };
+        var html = `<div class="slide">${marked(src, {renderer: renderer})}</div>`;
 
         $('#result').html(html);
 
