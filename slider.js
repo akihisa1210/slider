@@ -30,9 +30,8 @@ $(function() {
             return `<p>${modifiedText}</p>`;
         };
 
-
-        // html の最初と最後に、<div class=slide> と </div> をそれぞれ挿入する。
-        var html = `<div class="slide">${marked(src, {renderer: renderer})}</div>`;
+        // html の冒頭の </div> を削除し、末尾に </div> を挿入する。
+        var html = marked(src, {renderer: renderer}).replace(/<\/div>/, '') + '</div>';
 
         $('#result').html(html);
     });
@@ -45,7 +44,7 @@ $(function() {
     var $editor = $('#editor');
     var lineHeight = parseInt($editor.css('lineHeight'));
     $editor.on('input', function(e) {
-      var lines = ($(this).val() + '\n').match(/\n/g).length;
-      $(this).height(lineHeight * lines);
+        var lines = ($(this).val() + '\n').match(/\n/g).length;
+        $(this).height(lineHeight * lines);
     });
-  });
+});
