@@ -15,13 +15,21 @@ $(function() {
         var src = $(this).val();
 
         // marked のレンダラを変更し、<h1> の前に </div><div class="slide"> が入力されるようにする。
-        // html の最初と最後に、<div class=slide> と </div> をそれぞれ挿入する。
         var renderer = new marked.Renderer();
         renderer.heading = function(text, level) {
             if (level === 1) {
                 return `</div><div class="slide"><h${level}>${text}</h${level}>`;
             }
         };
+
+        // marked のレンダラを変更し、段落内の改行が html に反映されるようにする。
+        renderer.paragraph = function(text) {
+            var modifiedText = text.replace(/\r\n|\r|\n/g, '<br>');
+            return `<p>${modifiedText}</p>`;
+        };
+
+
+        // html の最初と最後に、<div class=slide> と </div> をそれぞれ挿入する。
         var html = `<div class="slide">${marked(src, {renderer: renderer})}</div>`;
 
         $('#result').html(html);
