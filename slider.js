@@ -9,7 +9,7 @@
 $(function() {
     marked.setOptions({
         langPrefix: '',
-        sanitize: false,
+        sanitize: true,
     });
 
     $('#editor').keyup(function() {
